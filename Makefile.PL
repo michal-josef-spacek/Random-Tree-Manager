@@ -19,6 +19,8 @@ perl_version 5.008;
 readme_from 'Oracle.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0;
+requires 'Error::Pure' => 0;
+requires 'Tree' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Random-Tree-Oracle/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Random-Tree-Oracle';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Random-Tree-Oracle';

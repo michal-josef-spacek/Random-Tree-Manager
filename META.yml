@@ -23,6 +23,8 @@ no_index:
     - xt
 requires:
   Class::Utils: 0
+  Error::Pure: 0
+  Tree: 0
   perl: 5.8.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Random-Tree-Oracle/issues
