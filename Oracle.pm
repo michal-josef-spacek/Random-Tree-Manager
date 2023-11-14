@@ -31,9 +31,6 @@ sub new {
 	if ($self->{'depth'} !~ m/^\d+$/ms) {
 		err "Parameter 'depth' must be a integer.";
 	}
-	if ($self->{'depth'} < 0) {
-		err "Parameter 'depth' must contain number greater or equal than 0.";
-	}
 
 	# Check max_childs.
 	if (! defined $self->{'max_childs'}) {
@@ -41,9 +38,6 @@ sub new {
 	}
 	if ($self->{'max_childs'} !~ m/^\d+$/ms) {
 		err "Parameter 'max_childs' must be a integer.";
-	}
-	if ($self->{'max_childs'} < 0) {
-		err "Parameter 'max_childs' must contain number greater or equal than 0.";
 	}
 
 	# ID counter.
