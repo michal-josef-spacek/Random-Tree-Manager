@@ -24,21 +24,8 @@ sub new {
 	# Process parameters.
 	set_params($self, @params);
 
-	# Check depth.
-	if (! defined $self->{'depth'}) {
-		err "Parameter 'depth' is required.";
-	}
-	if ($self->{'depth'} !~ m/^\d+$/ms) {
-		err "Parameter 'depth' must be a integer.";
-	}
-
-	# Check max_childs.
-	if (! defined $self->{'max_childs'}) {
-		err "Parameter 'max_childs' is required.";
-	}
-	if ($self->{'max_childs'} !~ m/^\d+$/ms) {
-		err "Parameter 'max_childs' must be a integer.";
-	}
+	$self->_check_req_positive_number('depth');
+	$self->_check_req_positive_number('max_childs');
 
 	# ID counter.
 	$self->{'_count'} = 0;
@@ -64,6 +51,20 @@ sub random {
 	}
 
 	return $tree;
+}
+
+sub _check_req_positive_number {
+	my ($self, $key) = @_;
+
+	# Check depth.
+	if (! defined $self->{$key}) {
+		err "Parameter '$key' is required.";
+	}
+	if ($self->{$key} !~ m/^\d+$/ms) {
+		err "Parameter '$key' must be a integer.";
+	}
+
+	return;
 }
 
 sub _create_subtree {
