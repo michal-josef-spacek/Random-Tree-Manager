@@ -36,7 +36,7 @@ sub new {
 sub random {
 	my $self = shift;
 
-	my $tree = Tree->new('Root');
+	my $tree = Tree->new;
 	$tree->meta({
 		'id' => ++$self->{'_count'},
 		'parent' => '',
