@@ -51,19 +51,19 @@ clean();
 # Test.
 eval {
 	Random::Tree::Oracle->new(
-		'max_childs' => undef,
+		'max_children' => undef,
 	);
 };
-is($EVAL_ERROR, "Parameter 'max_childs' is required.\n",
-	"Parameter 'max_childs' is required.");
+is($EVAL_ERROR, "Parameter 'max_children' is required.\n",
+	"Parameter 'max_children' is required.");
 clean();
 
 # Test.
 eval {
 	Random::Tree::Oracle->new(
-		'max_childs' => 'bad',
+		'max_children' => 'bad',
 	);
 };
-is($EVAL_ERROR, "Parameter 'max_childs' must be a integer.\n",
-	"Parameter 'max_childs' must be a integer.");
+is($EVAL_ERROR, "Parameter 'max_children' must be a integer.\n",
+	"Parameter 'max_children' must be a integer.");
 clean();

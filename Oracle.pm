@@ -18,14 +18,14 @@ sub new {
 	# Depth.
 	$self->{'depth'} = 3;
 
-	# Maximum number of childnodes.
-	$self->{'max_childs'} = 4;
+	# Maximum number of children nodes.
+	$self->{'max_children'} = 4;
 
 	# Process parameters.
 	set_params($self, @params);
 
 	$self->_check_req_positive_number('depth');
-	$self->_check_req_positive_number('max_childs');
+	$self->_check_req_positive_number('max_children');
 
 	# ID counter.
 	$self->{'_count'} = 0;
@@ -71,7 +71,7 @@ sub _create_subtree {
 	my ($self, $tree) = @_;
 
 	# Random number of subtrees.
-	my $subtrees_count = int(rand($self->{'max_childs'} + 1));
+	my $subtrees_count = int(rand($self->{'max_children'} + 1));
 
 	my $parent_id = $tree->meta->{'id'};
 
