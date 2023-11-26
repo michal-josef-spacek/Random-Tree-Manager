@@ -92,3 +92,129 @@ sub _create_subtree {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Random::Tree::Oracle - Class for random day generation.
+
+=head1 SYNOPSIS
+
+ use Random::Tree::Oracle;
+
+ my $obj = Random::Tree::Oracle->new(%params);
+ my $tree = $obj->random;
+
+=head1 METHODS
+
+=head2 C<new>
+
+ my $obj = Random::Tree::Oracle->new(%params);
+
+Constructor.
+
+=over 8
+
+=item * C<depth>
+
+Depth.
+
+Default value is 3.
+
+=item * C<max_children>
+
+Maximum number of children nodes.
+
+Default value is 4.
+
+=back
+
+=head2 C<random>
+
+ my $tree = $obj->random;
+
+Get random tree.
+Tree has metadata with keys:
+
+=over
+
+=item * C<id>
+
+=item * C<parent>
+
+=back
+
+Returns instance of L<Tree>.
+
+=head1 ERRORS
+
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
+         Parameter '%s' is required.
+         Parameter '%s' must be a integer.
+
+=head1 EXAMPLE
+
+=for comment filename=get_random_tree.pl
+
+ use strict;
+ use warnings;
+
+ use Random::Tree::Oracle;
+
+ # Object.
+ my $obj = Random::Tree::Oracle->new;
+
+ # Get tree.
+ my $tree = $obj->random;
+
+ # Print out.
+ print map("$_\n", @{$tree -> tree2string});
+
+ # Output like:
+ # . Attributes: {id => "1", parent => ""}
+ #     |--- . Attributes: {id => "2", parent => "1"}
+ #          |--- . Attributes: {id => "3", parent => "2"}
+ #          |    |--- . Attributes: {id => "6", parent => "3"}
+ #          |    |--- . Attributes: {id => "7", parent => "3"}
+ #          |    |--- . Attributes: {id => "8", parent => "3"}
+ #          |    |--- . Attributes: {id => "9", parent => "3"}
+ #          |--- . Attributes: {id => "4", parent => "2"}
+ #          |    |--- . Attributes: {id => "10", parent => "4"}
+ #          |    |--- . Attributes: {id => "11", parent => "4"}
+ #          |--- . Attributes: {id => "5", parent => "2"}
+ #               |--- . Attributes: {id => "12", parent => "5"}
+ #               |--- . Attributes: {id => "13", parent => "5"}
+ #               |--- . Attributes: {id => "14", parent => "5"}
+
+=head1 DEPENDENCIES
+
+L<Class::Utils>,
+L<Error::Pure>,
+L<Tree>.
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Random-Tree-Oracle>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© 2023 Michal Josef Špaček
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut

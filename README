@@ -1,0 +1,82 @@
+NAME
+    Random::Tree::Oracle - Class for random day generation.
+
+SYNOPSIS
+     use Random::Tree::Oracle;
+
+     my $obj = Random::Tree::Oracle->new(%params);
+     my $tree = $obj->random;
+
+METHODS
+  "new"
+     my $obj = Random::Tree::Oracle->new(%params);
+
+    Constructor.
+
+    *       "depth"
+
+            Depth.
+
+            Default value is 3.
+
+    *       "max_children"
+
+            Maximum number of children nodes.
+
+            Default value is 4.
+
+  "random"
+     my $tree = $obj->random;
+
+    Get random tree. Tree has metadata with keys:
+
+    *   "id"
+
+    *   "parent"
+
+    Returns instance of Tree.
+
+ERRORS
+     new():
+             From Class::Utils::set_params():
+                     Unknown parameter '%s'.
+             Parameter '%s' is required.
+             Parameter '%s' must be a integer.
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use Random::Tree::Oracle;
+
+     # Object.
+     my $obj = Random::Tree::Oracle->new;
+
+     # Get tree.
+     my $tree = $obj->random;
+
+     # Print out.
+     print map("$_\n", @{$tree -> tree2string});
+
+     # Output like:
+     # TODO
+
+DEPENDENCIES
+    Class::Utils, Error::Pure, Tree.
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Random-Tree-Oracle>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2023 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
