@@ -1,4 +1,4 @@
-package Random::Tree::Oracle;
+package Random::Tree::Manager;
 
 use strict;
 use warnings;
@@ -99,20 +99,20 @@ __END__
 
 =head1 NAME
 
-Random::Tree::Oracle - Class for random day generation.
+Random::Tree::Manager - Class for random day generation.
 
 =head1 SYNOPSIS
 
- use Random::Tree::Oracle;
+ use Random::Tree::Manager;
 
- my $obj = Random::Tree::Oracle->new(%params);
+ my $obj = Random::Tree::Manager->new(%params);
  my $tree = $obj->random;
 
 =head1 METHODS
 
 =head2 C<new>
 
- my $obj = Random::Tree::Oracle->new(%params);
+ my $obj = Random::Tree::Manager->new(%params);
 
 Constructor.
 
@@ -164,10 +164,10 @@ Returns instance of L<Tree>.
  use strict;
  use warnings;
 
- use Random::Tree::Oracle;
+ use Random::Tree::Manager;
 
  # Object.
- my $obj = Random::Tree::Oracle->new;
+ my $obj = Random::Tree::Manager->new;
 
  # Get tree.
  my $tree = $obj->random;
@@ -199,7 +199,7 @@ L<Tree>.
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Random-Tree-Oracle>
+L<https://github.com/michal-josef-spacek/Random-Tree-Manager>
 
 =head1 AUTHOR
 

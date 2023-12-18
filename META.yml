@@ -1,5 +1,5 @@
 ---
-abstract: 'Generate random data for Oracle tree manager.'
+abstract: 'Generate random data for tree manager.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
@@ -15,9 +15,10 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Random-Tree-Oracle
+name: Random-Tree-Manager
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
@@ -27,8 +28,8 @@ requires:
   Tree: 0
   perl: 5.8.0
 resources:
-  bugtracker: https://github.com/michal-josef-spacek/Random-Tree-Oracle/issues
-  homepage: https://github.com/michal-josef-spacek/Random-Tree-Oracle
+  bugtracker: https://github.com/michal-josef-spacek/Random-Tree-Manager/issues
+  homepage: https://github.com/michal-josef-spacek/Random-Tree-Manager
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/michal-josef-spacek/Random-Tree-Oracle
+  repository: git://github.com/michal-josef-spacek/Random-Tree-Manager
 version: '0.01'

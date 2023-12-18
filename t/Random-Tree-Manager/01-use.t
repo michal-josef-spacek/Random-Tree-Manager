@@ -7,8 +7,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('Random::Tree::Oracle');
+	use_ok('Random::Tree::Manager');
 }
 
 # Test.
-require_ok('Random::Tree::Oracle');
+require_ok('Random::Tree::Manager');

@@ -14,13 +14,13 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 LICENSE
 Makefile.PL
+Manager.pm
 MANIFEST			This list of files
 META.yml
-Oracle.pm
 README
-t/Random-Tree-Oracle/01-use.t
-t/Random-Tree-Oracle/02-version.t
-t/Random-Tree-Oracle/03-new.t
-t/Random-Tree-Oracle/04-random.t
-xt/Random-Tree-Oracle/01-pod_coverage.t
-xt/Random-Tree-Oracle/02-pod.t
+t/Random-Tree-Manager/01-use.t
+t/Random-Tree-Manager/02-version.t
+t/Random-Tree-Manager/03-new.t
+t/Random-Tree-Manager/04-random.t
+xt/Random-Tree-Manager/01-pod_coverage.t
+xt/Random-Tree-Manager/02-pod.t

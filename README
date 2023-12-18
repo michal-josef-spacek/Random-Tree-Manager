@@ -1,15 +1,15 @@
 NAME
-    Random::Tree::Oracle - Class for random day generation.
+    Random::Tree::Manager - Class for random day generation.
 
 SYNOPSIS
-     use Random::Tree::Oracle;
+     use Random::Tree::Manager;
 
-     my $obj = Random::Tree::Oracle->new(%params);
+     my $obj = Random::Tree::Manager->new(%params);
      my $tree = $obj->random;
 
 METHODS
   "new"
-     my $obj = Random::Tree::Oracle->new(%params);
+     my $obj = Random::Tree::Manager->new(%params);
 
     Constructor.
 
@@ -47,10 +47,10 @@ EXAMPLE
      use strict;
      use warnings;
 
-     use Random::Tree::Oracle;
+     use Random::Tree::Manager;
 
      # Object.
-     my $obj = Random::Tree::Oracle->new;
+     my $obj = Random::Tree::Manager->new;
 
      # Get tree.
      my $tree = $obj->random;
@@ -59,13 +59,26 @@ EXAMPLE
      print map("$_\n", @{$tree -> tree2string});
 
      # Output like:
-     # TODO
+     # . Attributes: {id => "1", parent => ""}
+     #     |--- . Attributes: {id => "2", parent => "1"}
+     #          |--- . Attributes: {id => "3", parent => "2"}
+     #          |    |--- . Attributes: {id => "6", parent => "3"}
+     #          |    |--- . Attributes: {id => "7", parent => "3"}
+     #          |    |--- . Attributes: {id => "8", parent => "3"}
+     #          |    |--- . Attributes: {id => "9", parent => "3"}
+     #          |--- . Attributes: {id => "4", parent => "2"}
+     #          |    |--- . Attributes: {id => "10", parent => "4"}
+     #          |    |--- . Attributes: {id => "11", parent => "4"}
+     #          |--- . Attributes: {id => "5", parent => "2"}
+     #               |--- . Attributes: {id => "12", parent => "5"}
+     #               |--- . Attributes: {id => "13", parent => "5"}
+     #               |--- . Attributes: {id => "14", parent => "5"}
 
 DEPENDENCIES
     Class::Utils, Error::Pure, Tree.
 
 REPOSITORY
-    <https://github.com/michal-josef-spacek/Random-Tree-Oracle>
+    <https://github.com/michal-josef-spacek/Random-Tree-Manager>
 
 AUTHOR
     Michal Josef Špaček <mailto:skim@cpan.org>

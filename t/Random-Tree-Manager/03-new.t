@@ -3,24 +3,24 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Random::Tree::Oracle;
+use Random::Tree::Manager;
 use Test::More 'tests' => 8;
 use Test::NoWarnings;
 
 # Test.
-my $obj = Random::Tree::Oracle->new;
-isa_ok($obj, 'Random::Tree::Oracle');
+my $obj = Random::Tree::Manager->new;
+isa_ok($obj, 'Random::Tree::Manager');
 
 # Test.
 eval {
-	Random::Tree::Oracle->new('');
+	Random::Tree::Manager->new('');
 };
 is($EVAL_ERROR, "Unknown parameter ''.\n", 'Bad \'\' parameter.');
 clean();
 
 # Test.
 eval {
-	Random::Tree::Oracle->new(
+	Random::Tree::Manager->new(
 		'something' => 'value',
 	);
 };
@@ -30,7 +30,7 @@ clean();
 
 # Test.
 eval {
-	Random::Tree::Oracle->new(
+	Random::Tree::Manager->new(
 		'depth' => undef,
 	);
 };
@@ -40,7 +40,7 @@ clean();
 
 # Test.
 eval {
-	Random::Tree::Oracle->new(
+	Random::Tree::Manager->new(
 		'depth' => 'bad',
 	);
 };
@@ -50,7 +50,7 @@ clean();
 
 # Test.
 eval {
-	Random::Tree::Oracle->new(
+	Random::Tree::Manager->new(
 		'max_children' => undef,
 	);
 };
@@ -60,7 +60,7 @@ clean();
 
 # Test.
 eval {
-	Random::Tree::Oracle->new(
+	Random::Tree::Manager->new(
 		'max_children' => 'bad',
 	);
 };

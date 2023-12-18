@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use Random::Tree::Oracle;
+use Random::Tree::Manager;
 
 # Object.
-my $obj = Random::Tree::Oracle->new;
+my $obj = Random::Tree::Manager->new;
 
 # Get tree.
 my $tree = $obj->random;
