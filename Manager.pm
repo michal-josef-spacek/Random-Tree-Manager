@@ -99,7 +99,7 @@ __END__
 
 =head1 NAME
 
-Random::Tree::Manager - Class for random day generation.
+Random::Tree::Manager - Generate random data for tree manager.
 
 =head1 SYNOPSIS
 
